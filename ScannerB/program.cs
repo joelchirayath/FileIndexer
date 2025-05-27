@@ -14,6 +14,7 @@ class Program
 
     static void Main(string[] args) // starts the program
     {
+
         // Set this process to use only CPU core 1
         Process currentProcess = Process.GetCurrentProcess();
         currentProcess.ProcessorAffinity = (IntPtr)0x2; // Core 1

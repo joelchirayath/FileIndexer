@@ -20,7 +20,7 @@ class Master
         // Set this process to use only CPU core 1
         Process currentProcess = Process.GetCurrentProcess();
         currentProcess.ProcessorAffinity = (IntPtr)0x4; // Core 2
-        Console.WriteLine("Master is pinned to CPU core: 2")
+        Console.WriteLine("Master is pinned to CPU core: 2");
 
         if (args.Length < 2)
         {
