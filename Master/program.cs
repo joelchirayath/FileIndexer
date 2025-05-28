@@ -22,12 +22,6 @@ class Master
         currentProcess.ProcessorAffinity = (IntPtr)0x4; // Core 2
         Console.WriteLine("Master is pinned to CPU core: 2");
 
-        //simulate work
-        while (true)
-        {
-            Thread.SpinWait(1000000);
-        }
-
         if (args.Length < 2)
         {
             Console.WriteLine("Usage: Master.exe <PipeName1> <PipeName2>");
