@@ -20,6 +20,12 @@ class Program
         currentProcess.ProcessorAffinity = (IntPtr)0x1; // Core 0
         Console.WriteLine("ScannerA is pinned to CPU core 0.");
 
+        //simulate work
+        while (true)
+        {
+            Thread.SpinWait(1000000);
+        }
+
         if (args.Length < 1)
         {
             Console.WriteLine("Usage: ScannerA <directory path>");
