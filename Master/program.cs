@@ -46,6 +46,11 @@ class Master
         PrintResults();
     }
 
+    static void SetProcessorAffinity(int core)
+    {
+        Process.GetCurrentProcess().ProcessorAffinity = (IntPtr)(1 << core);
+    }
+
     static void ListenOnPipe(string pipeName)
     {
         try
