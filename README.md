@@ -58,9 +58,8 @@ Each scanner sends strings like filename:word:count through its pipe.
 Each scanner scans files and counts words concurrently.
 
 ### 🧠 CPU Core Affinity
-### Each process is pinned to a separate core for true multicore parallelism
+ Each process is pinned to a separate core for true multicore parallelism
 
 
 ## 👨‍🏫 Authors
-
 Developed by Joel Chirayath as part of Object-Oriented Programming (Vilnius University, Semester 2).
