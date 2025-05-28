@@ -32,20 +32,21 @@ FileIndexer/
    Master.exe agent1_pipe agent2_pipe
 4. Run ScannerA in a new terminal:
    ```bash
-     ScannerA.exe "X:\YourTextFilesA"
+     ScannerA.exe "YourTextFile_path"
 6. Run ScannerB in a new terminal:
    ```bash
-   ScannerB.exe "X:\YourTextFilesB"
+   ScannerB.exe "YourTextFiles_path"
    
 🧬 Sample Output (From Master)
-
+```
 [Master] Received: file1.txt:hello:2
 [Master] Received: file2.txt:world:1
-...
+```
+```
 Final Aggregated Index:
 file1.txt:hello:2
 file2.txt:world:1
-...
+```
 
 ## 🧠 Key Concepts
 
