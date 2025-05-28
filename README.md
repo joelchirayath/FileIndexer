@@ -45,15 +45,16 @@ Master is pinned to CPU core: 2
 
 [Master] Connected to pipe 'agent1_pipe'.
 [Master] Received: ............
-
 [Master] Pipe 'agent1_pipe' closed.
+
 [Master] Connected to pipe 'agent2_pipe'.
 [Master] Received:........
+[Master] Pipe 'agent2_pipe' closed.
 ```
 ```
 Final Aggregated Index:
-file1.txt:hello:2
-file2.txt:world:1
+file1.txt:..........
+file2.txt:..........
 ```
 
 ## 🧠 Key Concepts
