@@ -9,7 +9,6 @@ using System.IO.Pipes;
 using System.Threading;
 using System.Diagnostics;
 
-
 class Master
 {
     static ConcurrentDictionary<string, Dictionary<string, int>> aggregatedData = new();
