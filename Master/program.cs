@@ -13,7 +13,7 @@ class Master
 {
     static ConcurrentDictionary<string, Dictionary<string, int>> aggregatedData = new();
 
-    static void Main(string[] args) //entry point
+    static void Main(string[] args) //entry point. Main Thread.
     {
 
         // Set this process to use only CPU core 1
@@ -32,7 +32,7 @@ class Master
         string pipeName1 = args[0];
         string pipeName2 = args[1];
 
-        //creates two thread for each pipe
+        //creates two thread for each pipe (worker threads, to handle scanners)
         Thread t1 = new(() => ListenOnPipe(pipeName1));
         Thread t2 = new(() => ListenOnPipe(pipeName2));
 
