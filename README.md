@@ -32,10 +32,10 @@ FileIndexer/
    Master.exe agent1_pipe agent2_pipe
 4. Run ScannerA in a new terminal:
    ```bash
-     ScannerA.exe "YourTextFile_path"
+     ScannerA.exe "Your/TextFile/path/.txt"
 6. Run ScannerB in a new terminal:
    ```bash
-   ScannerB.exe "YourTextFiles_path"
+   ScannerB.exe "Your/TextFiles/path/.txt"
    
 🧬 Sample Output (From Master)
 ```
