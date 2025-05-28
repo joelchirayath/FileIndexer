@@ -6,13 +6,15 @@ This project implements a distributed file indexing system in C# using:
 - 🧠 CPU core affinity to assign processes to specific CPU cores
 
 ## 📁 Project Structure
+```
 FileIndexer/
 ├── Master/ # Central aggregator process
 ├── ScannerA/ # Agent 1: Scans directory A
 ├── ScannerB/ # Agent 2: Scans directory B
 └── README.md
-## 🧠 How It Works
+```
 
+## 🧠 How It Works
 - `ScannerA` and `ScannerB` each scan a directory for `.txt` files and index word frequencies.
 - Both scanners connect to the `Master` via **named pipes** and send their word counts.
 - The `Master` listens to two named pipes (`agent1_pipe`, `agent2_pipe`) and aggregates all word data.
@@ -30,37 +32,43 @@ FileIndexer/
    Master.exe agent1_pipe agent2_pipe
 4. Run ScannerA in a new terminal:
    ```bash
-     ScannerA.exe "X:\YourTextFilesA"
+     ScannerA.exe "Your/TextFile/path/.txt"
 6. Run ScannerB in a new terminal:
    ```bash
-   ScannerB.exe "X:\YourTextFilesB"
+   ScannerB.exe "Your/TextFiles/path/.txt"
    
 🧬 Sample Output (From Master)
+```
+Master is pinned to CPU core: 2
+[Master] Waiting for connection on pipe 'agent1_pipe'...
+[Master] Waiting for connection on pipe 'agent2_pipe'...
 
-[Master] Received: file1.txt:hello:2
-[Master] Received: file2.txt:world:1
-...
+[Master] Connected to pipe 'agent1_pipe'.
+[Master] Received: ............
+[Master] Pipe 'agent1_pipe' closed.
+
+[Master] Connected to pipe 'agent2_pipe'.
+[Master] Received:........
+[Master] Pipe 'agent2_pipe' closed.
+```
+```
 Final Aggregated Index:
-file1.txt:hello:2
-file2.txt:world:1
-...
+file1.txt:..........
+file2.txt:..........
+```
 
-🧠 Key Concepts
+## 🧠 Key Concepts
 
-🪝 Named Pipes
-
+### 🪝 Named Pipes
 Allows communication between Master and Scanners.
 Each scanner sends strings like filename:word:count through its pipe.
 
-🧵 Multithreading
-
+### 🧵 Multithreading
 Each scanner scans files and counts words concurrently.
 
-🧠 CPU Core Affinity
+### 🧠 CPU Core Affinity
+ Each process is pinned to a separate core for true multicore parallelism
 
-Each process is pinned to a separate core for true multicore parallelism
 
-
-👨‍🏫 Authors
-
+## 👨‍🏫 Authors
 Developed by Joel Chirayath as part of Object-Oriented Programming (Vilnius University, Semester 2).
