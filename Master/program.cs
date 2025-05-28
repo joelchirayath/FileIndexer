@@ -28,6 +28,8 @@ class Master
             return;
         }
 
+        SetProcessorAffinity(4); // Core 2
+
         string pipeName1 = args[0];
         string pipeName2 = args[1];
 
