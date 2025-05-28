@@ -6,13 +6,15 @@ This project implements a distributed file indexing system in C# using:
 - 🧠 CPU core affinity to assign processes to specific CPU cores
 
 ## 📁 Project Structure
+```
 FileIndexer/
 ├── Master/ # Central aggregator process
 ├── ScannerA/ # Agent 1: Scans directory A
 ├── ScannerB/ # Agent 2: Scans directory B
 └── README.md
-## 🧠 How It Works
+```
 
+## 🧠 How It Works
 - `ScannerA` and `ScannerB` each scan a directory for `.txt` files and index word frequencies.
 - Both scanners connect to the `Master` via **named pipes** and send their word counts.
 - The `Master` listens to two named pipes (`agent1_pipe`, `agent2_pipe`) and aggregates all word data.
@@ -45,22 +47,19 @@ file1.txt:hello:2
 file2.txt:world:1
 ...
 
-🧠 Key Concepts
+## 🧠 Key Concepts
 
-🪝 Named Pipes
-
+### 🪝 Named Pipes
 Allows communication between Master and Scanners.
 Each scanner sends strings like filename:word:count through its pipe.
 
-🧵 Multithreading
-
+### 🧵 Multithreading
 Each scanner scans files and counts words concurrently.
 
-🧠 CPU Core Affinity
+### 🧠 CPU Core Affinity
+### Each process is pinned to a separate core for true multicore parallelism
 
-Each process is pinned to a separate core for true multicore parallelism
 
-
-👨‍🏫 Authors
+## 👨‍🏫 Authors
 
 Developed by Joel Chirayath as part of Object-Oriented Programming (Vilnius University, Semester 2).
