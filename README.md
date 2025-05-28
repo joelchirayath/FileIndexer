@@ -39,8 +39,16 @@ FileIndexer/
    
 🧬 Sample Output (From Master)
 ```
-[Master] Received: file1.txt:hello:2
-[Master] Received: file2.txt:world:1
+Master is pinned to CPU core: 2
+[Master] Waiting for connection on pipe 'agent1_pipe'...
+[Master] Waiting for connection on pipe 'agent2_pipe'...
+
+[Master] Connected to pipe 'agent1_pipe'.
+[Master] Received: ............
+
+[Master] Pipe 'agent1_pipe' closed.
+[Master] Connected to pipe 'agent2_pipe'.
+[Master] Received:........
 ```
 ```
 Final Aggregated Index:
