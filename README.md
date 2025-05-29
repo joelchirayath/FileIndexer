@@ -5,6 +5,13 @@ This project implements a distributed file indexing system in C# using:
 - 🧵 Multithreading for concurrent scanning
 - 🧠 CPU core affinity to assign processes to specific CPU cores
 
+## 📌 Features
+- 🧠 CPU core pinning to distribute load effectively
+- 🔄 Asynchronous communication using named pipes
+- 🧵 Multi-threaded file scanning and word indexing
+- 📄 Real-time aggregation and summary by the master node
+- 🗂️ Modular project structure for scalability
+  
 ## 📁 Project Structure
 ```
 FileIndexer/
@@ -21,6 +28,18 @@ FileIndexer/
 - Each process is pinned to a **specific CPU core** using `Process.ProcessorAffinity`.
 
 ---
+
+## 📦 Requirements
+- .NET SDK 8.0+
+- Windows OS (due to `ProcessorAffinity` and Named Pipes support)
+- Basic understanding of terminal/PowerShell usage
+
+## 🛠️ Installation & Usage
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/FileIndexer.git
+   cd FileIndexer
 
 ## 🚀 Running the Project
 
@@ -72,3 +91,8 @@ Each scanner scans files and counts words concurrently.
 
 ## 👨‍🏫 Authors
 Developed by Joel Chirayath as part of Object-Oriented Programming (Vilnius University, Semester 2).
+
+## 📬 Contact
+For questions, feedback, or collaboration opportunities, feel free to reach out via:
+- 📧 joel.chirayath@example.com
+- 🌐 [LinkedIn Profile](https://www.linkedin.com/in/joel-chirayath-5650432b8/)
