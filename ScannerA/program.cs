@@ -87,7 +87,7 @@ class Program
                     dataReady.Wait(); // wait for data ready signal
                     dataReady.Reset(); // reset signal
 
-                    while (fileResults.TryDequeue(out string line))
+                    while (fileResults.TryDequeue(out var line))
                     {
                         writer.WriteLine(line);
                     }
