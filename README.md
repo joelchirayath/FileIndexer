@@ -75,6 +75,7 @@ Final Aggregated Index:
 file1.txt:..........
 file2.txt:..........
 ```
+---
 
 ## 🧠 Key Concepts
 
@@ -94,5 +95,5 @@ Developed by Joel Chirayath as part of Object-Oriented Programming (Vilnius Univ
 
 ## 📬 Contact
 For questions, feedback, or collaboration opportunities, feel free to reach out via:
-- 📧 joel.chirayath@example.com
+- 📧 joelchirayath@gmail.com
 - 🌐 [LinkedIn Profile](https://www.linkedin.com/in/joel-chirayath-5650432b8/)
