@@ -59,6 +59,7 @@ class Master
             while ((line = reader.ReadLine()) != null)
             {
                 Console.WriteLine($"[Master] Received: {line}");
+
                 var parts = line.Split(':');
                 if (parts.Length != 3) continue;
 
