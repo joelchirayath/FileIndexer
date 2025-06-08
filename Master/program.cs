@@ -16,18 +16,17 @@ class Master
     static void Main(string[] args) //entry point. Main Thread.
     {
 
-        // Set this process to use only CPU core 1
+        // Set this process to use only CPU core 2
         Process currentProcess = Process.GetCurrentProcess();
         currentProcess.ProcessorAffinity = (IntPtr)0x4; // Core 2
         Console.WriteLine("Master is pinned to CPU core: 2");
 
         if (args.Length < 2)
         {
+            Console.WriteLine("Program Exited!");
             Console.WriteLine("Usage: Master.exe <PipeName1> <PipeName2>");
             return;
         }
-
-        SetProcessorAffinity(4); // Core 2
 
         string pipeName1 = args[0];
         string pipeName2 = args[1];
