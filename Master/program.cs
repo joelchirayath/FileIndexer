@@ -41,12 +41,7 @@ class Master
         t1.Join();
         t2.Join();
 
-        PrintResults();
-    }
-
-    static void SetProcessorAffinity(int core)
-    {
-        Process.GetCurrentProcess().ProcessorAffinity = (IntPtr)(1 << core);
+        PrintResults(); // prints aggregated results
     }
 
     static void ListenOnPipe(string pipeName)
