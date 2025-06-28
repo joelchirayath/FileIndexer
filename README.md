@@ -38,7 +38,7 @@ FileIndexer/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/FileIndexer.git
+   git clone https://github.com/joelchirayath/FileIndexer.git
    cd FileIndexer
 
 ## 🚀 Running the Project
